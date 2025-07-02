@@ -1,0 +1,11 @@
+kagglehub
+requests
+fastapi
+uvicorn[standard]
+python-dotenv
+langchain
+langchain-openai
+python-multipart  # Essencial para upload de arquivos no FastAPI
+pydantic
+PyMuPDF         # Para extrair texto de PDFs
+black           # Para formatação de código
