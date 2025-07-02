@@ -59,7 +59,5 @@ async def analisar_curriculo(
         )
 
     except Exception as e:
-        # Tratamento de erro para qualquer falha inesperada no processo.
-        # Em um ambiente de produção, seria bom logar o erro aqui para monitoramento.
         print(f"Ocorreu um erro inesperado durante a análise: {e}")
         raise HTTPException(status_code=500, detail=f"Ocorreu um erro interno ao processar o currículo.")

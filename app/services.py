@@ -8,7 +8,7 @@ def extrair_info_curriculo(texto_curriculo: str) -> PerfilCandidato:
     Usa o LangChain e a OpenAI para extrair informações estruturadas de um texto de currículo.
     """
     # 1. Inicializa o modelo da OpenAI que será usado.
-    model = ChatOpenAI(model="gpt-3.5-turbo", temperature=0)
+    model = ChatOpenAI(model="gpt-4o", temperature=0)
 
     # 2. Cria o parser que dirá ao LangChain como formatar a saída, usando nosso modelo Pydantic.
     parser = PydanticOutputParser(pydantic_object=PerfilCandidato)
@@ -43,8 +43,8 @@ def analisar_compatibilidade_vaga(perfil: PerfilCandidato, contexto_vaga: str) -
     """
     Analisa a compatibilidade entre um perfil de candidato e uma descrição de vaga.
     """
-    # CORREÇÃO: Trocado 'gpt-4-turbo' por 'gpt-3.5-turbo'.
-    model = ChatOpenAI(model="gpt-3.5-turbo", temperature=0)
+    # CORREÇÃO: Trocado 'gpt-4-turbo' por 'gpt-4o'.
+    model = ChatOpenAI(model="gpt-4o", temperature=0)
     parser = PydanticOutputParser(pydantic_object=AnaliseCompatibilidade)
 
     prompt_template = """
@@ -85,8 +85,8 @@ def gerar_perguntas_esclarecimento(perfil: PerfilCandidato, contexto_vaga: str) 
     Gera perguntas para uma entrevista com base nas informações ausentes ou que precisam de
     esclarecimento no currículo, comparando com os requisitos da vaga.
     """
-    # CORREÇÃO: Trocado 'gpt-4-turbo' por 'gpt-3.5-turbo'.
-    model = ChatOpenAI(model="gpt-3.5-turbo", temperature=0.5) # Um pouco mais de criatividade aqui
+    # CORREÇÃO: Trocado 'gpt-4-turbo' por 'gpt-4o'.
+    model = ChatOpenAI(model="gpt-4o", temperature=0.5) # Um pouco mais de criatividade aqui
     parser = PydanticOutputParser(pydantic_object=PerguntasEntrevista)
 
     prompt_template = """

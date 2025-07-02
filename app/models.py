@@ -1,7 +1,6 @@
 from pydantic import BaseModel, Field
 from typing import List, Optional
 
-# --- Modelos para o Caso de Uso 1: Extração do Currículo ---
 
 class Educacao(BaseModel):
     """Define a estrutura para cada item de educação no currículo."""
@@ -29,7 +28,6 @@ class PerfilCandidato(BaseModel):
     linkedin: Optional[str] = Field(None, description="URL para o perfil do LinkedIn, se encontrado.")
 
 
-# --- Modelos para o Caso de Uso 2: Análise de Compatibilidade ---
 
 class AnaliseCompatibilidade(BaseModel):
     """Define a estrutura para a análise de compatibilidade entre o candidato e a vaga."""
@@ -39,14 +37,11 @@ class AnaliseCompatibilidade(BaseModel):
     resumo_analise: str = Field(description="Um parágrafo explicando o porquê da nota e da análise, justificando os pontos fortes e a melhorar.")
 
 
-# --- Modelo para o Desafio Extra: Perguntas Inteligentes ---
 
 class PerguntasEntrevista(BaseModel):
     """Define a estrutura para as perguntas de esclarecimento geradas pela IA."""
     informacoes_faltantes: List[str] = Field(description="Lista de perguntas para fazer ao candidato para esclarecer pontos ausentes ou duvidosos no currículo em relação à vaga.")
 
-
-# --- Modelo para a Resposta Completa da API ---
 
 class AnaliseCompleta(BaseModel):
     """

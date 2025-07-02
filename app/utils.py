@@ -27,7 +27,6 @@ async def extrair_texto_de_pdf(arquivo: UploadFile) -> str:
         # Extraímos o texto da página e adicionamos à nossa string.
         texto_completo += pagina.get_text()
     
-    # É uma boa prática fechar o documento para libertar recursos.
     documento.close()
     
     return texto_completo
